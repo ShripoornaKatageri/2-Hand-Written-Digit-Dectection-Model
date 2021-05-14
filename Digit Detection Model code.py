@@ -10,7 +10,7 @@ x_train.shape
 
 
 # In[ ]:
-
+#importing data 
 
 import matplotlib.pyplot as  plt 
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -26,6 +26,8 @@ for i,ax in enumerate(axs.flat):
 
 
 # In[ ]:
+#preprocessing the data 
+#reshaping the data 
 
 
 x_train= x_train.reshape(x_train.shape[0],28,28,1)
@@ -34,6 +36,7 @@ input_shape=(28,28,1)
 
 
 # In[ ]:
+#converting as float dtype
 
 
 x_train= x_train.astype('float32')
@@ -46,6 +49,7 @@ print('the {}'.format(x_test.shape[0]))
 
 
 # In[ ]:
+#CNN
 
 
 from tensorflow.keras.models import Sequential
@@ -61,7 +65,7 @@ model.add(Dense(10,activation=tf.nn.softmax))
 
 
 # In[ ]:
-
+#compiling code
 
 model.compile(optimizer='adam',
              loss='sparse_categorical_crossentropy'
@@ -70,12 +74,13 @@ model.fit(x=x_train,y=y_train, epochs=1)
 
 
 # In[ ]:
+#evaluating code
 
 
 model.evaluate(x_test,y_test)
 
 
-# In[ ]:
+#end 
 
 
 
